@@ -1,0 +1,25 @@
+<Infos>
+	<Site>
+		<Town>Albukerque</Town>
+		<FirstName>Walter</FirstName>	
+		<Name>White</Name>			
+	</Site>
+
+	<Site>
+		<Town>New-Jersey</Town>
+		<FirstName>Tony</FirstName>	
+		<Name>Soprano</Name>			
+	</Site>	
+
+	<Site>
+		<Town>Charming</Town>
+		<FirstName>Jax</FirstName>	
+		<Name>Teller</Name>	
+	</Site>	
+	
+	<Site>
+		<Town>Albukerque</Town>
+		<FirstName>Jessy</FirstName>	
+		<Name>Pinkman</Name>		
+	</Site>				
+</Infos>
