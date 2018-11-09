@@ -1,0 +1,90 @@
+﻿<Controls:MetroWindow 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"			
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Mon interface avec Material Design" 		
+		Height="650" Width="340" 
+		ResizeMode="NoResize">
+
+		
+		
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source=".\resources\custom.xaml" /> 
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Red.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.DeepPurple.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>		
+		
+		
+    <Grid>       
+        <StackPanel Orientation="Vertical" Margin="10,10,10,0" HorizontalAlignment="Center">
+		
+			<StackPanel Orientation="Horizontal" Margin="0,5,0,0" HorizontalAlignment="Center">
+				<Label Content="Mon interface" Margin="0,0,0,0" FontSize="20"/>										
+			</StackPanel>			
+				
+            <GroupBox Header="Deployment share selection" Height="80" Margin="0,10,0,0" Width="300" HorizontalAlignment="left">	
+				<StackPanel Orientation="Horizontal"  FlowDirection="LeftToRight" Margin="0,5,0,0" HorizontalAlignment="Center">
+					<ComboBox Name="Choose_DS" SelectedIndex="0" Text="Choose" Height="25" Width="235" Margin="0,0,0,0">										
+					</ComboBox>
+				</StackPanel>
+			</GroupBox>
+		
+            <GroupBox Header="Folder sources" Height="90" Margin="0,7,0,0" Width="300" HorizontalAlignment="left">
+                <StackPanel>															
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                        <Button Name="Browse" Content="Browse" Margin="4,0,0,0" Width="80"></Button>
+                        <!-- <TextBox Margin="5,0,0,0" Width="120" Height="25"></TextBox> -->
+                    </StackPanel>							
+                </StackPanel>             
+            </GroupBox>
+
+            <GroupBox Header="Options" HorizontalAlignment="Left" Margin="0,7,0,0" Height="80" Width="300">
+				<StackPanel Orientation="Horizontal"  FlowDirection="LeftToRight" Margin="0,5,0,0" HorizontalAlignment="Center">
+					<CheckBox Name="Appli_Reboot" Content="Reboot" Margin="4,0,0,0" Width="70" Height="19"></CheckBox>										
+					<CheckBox Name="Appli_Hide" Content="Hide" Margin="4,0,0,0" Width="70" Height="19"></CheckBox>
+					<CheckBox Name="Appli_Enable" Content="Enable" Margin="4,0,0,0" Width="70" Height="19"></CheckBox>
+				</StackPanel>
+            </GroupBox>	
+			
+            <GroupBox Header="Options" HorizontalAlignment="Left" Margin="0,7,0,0" Height="80" Width="300">
+				<StackPanel Orientation="Horizontal"  FlowDirection="LeftToRight" Margin="0,5,0,0" HorizontalAlignment="Center">
+					<RadioButton Content="Reboot" Margin="4,0,0,0" Width="70" Height="19"></RadioButton>										
+					<RadioButton Content="Hide" Margin="4,0,0,0" Width="70" Height="19"></RadioButton>
+				</StackPanel>
+            </GroupBox>				
+			
+			<TabControl Name="Tab_Control" HorizontalAlignment="Left" Height="190" VerticalAlignment="Top" Width="300" Margin="0,10,0,0">		
+				<TabItem Header="Infos" Margin="0,0,0,0">
+					<Grid Background="CornFlowerBlue">
+						<DataGrid SelectionMode="Single"  Name="DataGrid_XML"  ItemsSource="{Binding}"  Margin="2,2,2,2" >
+							<DataGrid.Columns>				
+								<DataGridTextColumn Header="Ville" Binding="{Binding Ville}"/>																			
+								<DataGridTextColumn Header="Prenom" Binding="{Binding Prenom}"/>	
+								<DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+				</TabItem>			
+						
+				<TabItem Header="Details" Margin="0,0,0,0">
+				</TabItem>
+				
+				<TabItem Header="Other" Margin="0,0,0,0">
+				</TabItem>						
+			</TabControl>
+			
+        </StackPanel>        
+    </Grid>
+</Controls:MetroWindow>        
